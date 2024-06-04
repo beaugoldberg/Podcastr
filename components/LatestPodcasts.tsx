@@ -23,19 +23,6 @@ const LatestPodcasts = () => {
     });
   };
 
-  //   <Button
-  //             onClick={handlePlay}
-  //             className="text-16 w-full max-w-[250px] bg-orange-1 font-extrabold text-white-1"
-  //           >
-  //             <Image
-  //               src="/icons/Play.svg"
-  //               width={20}
-  //               height={20}
-  //               alt="random play"
-  //             />{" "}
-  //             &nbsp; Play podcast
-  //           </Button>
-
   return (
     <div className="flex flex-col gap-3 w-full h-96">
       <h1 className="text-20 font-bold text-white-1">Latest Podcasts</h1>
@@ -51,7 +38,7 @@ const LatestPodcasts = () => {
               </span>
               <span className="hidden group-hover:block mx-5 cursor-pointer">
                 <Image
-                  src="/icons/play.svg"
+                  src="/icons/Play.svg"
                   layout="fixed"
                   objectFit="cover"
                   objectPosition="center"
