@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import Image from "next/image";
 import { formatTime } from "@/lib/formatTime";
@@ -10,10 +10,13 @@ import { PodcastProps } from "@/types";
 
 const LatestPodcasts = () => {
   const latestPodcasts = useQuery(api.podcasts.getNewestPodcasts);
+  const updateViews = useMutation(api.podcasts.updatePodcastViews);
 
   const { setAudio } = useAudio();
 
-  const handlePlay = ({ podcast }: { podcast: PodcastProps }) => {
+  const handlePlay = async ({ podcast }: { podcast: PodcastProps }) => {
+    await updateViews({ podcastId: podcast._id! });
+
     setAudio({
       title: podcast.podcastTitle,
       audioUrl: podcast.audioUrl!,

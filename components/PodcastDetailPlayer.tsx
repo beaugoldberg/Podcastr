@@ -29,6 +29,7 @@ const PodcastDetailPlayer = ({
   const { toast } = useToast();
   const [isDeleting, setIsDeleting] = useState(false);
   const deletePodcast = useMutation(api.podcasts.deletePodcast);
+  const updateViews = useMutation(api.podcasts.updatePodcastViews);
 
   const handleDelete = async () => {
     try {
@@ -46,7 +47,9 @@ const PodcastDetailPlayer = ({
     }
   };
 
-  const handlePlay = () => {
+  const handlePlay = async () => {
+    await updateViews({ podcastId });
+
     setAudio({
       title: podcastTitle,
       audioUrl,

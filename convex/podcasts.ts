@@ -63,6 +63,21 @@ export const getUrl = mutation({
   },
 });
 
+export const updatePodcastListens = mutation({
+  args: {
+    podcastId: v.id("podcasts"),
+  },
+  handler: async (ctx, args) => {
+    const podcast = await ctx.db.get(args.podcastId);
+
+    console.log(podcast);
+
+    return await ctx.db.patch(args.podcastId, {
+      views: podcast?.views! + 1,
+    });
+  },
+});
+
 // this query will get all the podcasts based on the voiceType of the podcast , which we are showing in the Similar Podcasts section.
 export const getPodcastByVoiceType = query({
   args: {
