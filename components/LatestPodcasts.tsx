@@ -35,7 +35,7 @@ const LatestPodcasts = () => {
           className="flex h-20 items-center justify-between gap-6 border-b border-slate-800 pb-4 mt-2"
         >
           <div className="flex items-center text-center gap-4">
-            <div className="relative group w-[70px]">
+            <div className="absolute group w-[70px]">
               <span className="group-hover:hidden text-12 lg:text-16 font-normal text-white-1 mx-5">
                 {index + 1}
               </span>
