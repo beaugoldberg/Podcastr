@@ -42,9 +42,6 @@ const LatestPodcasts = () => {
                 </span>
                 <Image
                   src="/icons/Play.svg"
-                  layout="fixed"
-                  objectFit="cover"
-                  objectPosition="center"
                   width={26}
                   height={26}
                   alt="play"
@@ -55,18 +52,21 @@ const LatestPodcasts = () => {
               <div className="flex items-center">
                 <Image
                   src={podcast.imageUrl!}
+                  layout="fixed"
+                  objectFit="cover"
+                  objectPosition="center"
                   width={60}
                   height={60}
                   alt="thumbnail"
                   className="rounded-lg"
                 />
               </div>
-              <div className="col-span-7 max-[766px]:col-span-7 min-[766px]:col-span-6 flex items-center">
+              <div className=" max-sm:col-span-7 max-md:col-span-7 col-span-6 flex items-center">
                 <p className="font-semibold text-white-1 text-sm lg:text-md text-md truncate capitalize">
                   {podcast?.podcastTitle}
                 </p>
               </div>
-              <div className="max-md:hidden lg:col-span-1 flex items-center justify-center gap-1">
+              <div className="max-md:hidden col-span-1 flex items-center justify-center gap-1">
                 <Image
                   src="/icons/headphone.svg"
                   width={24}
@@ -77,7 +77,7 @@ const LatestPodcasts = () => {
                   {podcast?.views}
                 </p>
               </div>
-              <div className="col-span-2 flex items-center justify-center">
+              <div className="col-span-2 flex items-center justify-center gap-1">
                 <Image
                   src="/icons/watch.svg"
                   width={24}
